@@ -1,0 +1,1 @@
+# PHP-Object-Operator-Warning-Array-to-string-conversion
