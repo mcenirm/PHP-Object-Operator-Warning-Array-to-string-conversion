@@ -24,4 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.3
       - name: Test
-        run: php test.php
+        run: |
+          php -l test.php
+          php test.php
