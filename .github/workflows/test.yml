@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.3
+      - name: Lint
+        run: php -l test.php
       - name: Test
-        run: |
-          php -l test.php
-          php test.php
+        run: php test.php
