@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test_all_the_versions:
+  test:
     strategy:
       matrix:
         test_file:
