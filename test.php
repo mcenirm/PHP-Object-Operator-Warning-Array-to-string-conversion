@@ -15,5 +15,5 @@ $actual   = $the_instance->$the_array['the_property_name'];
 echo "Expected:  " . escapeshellarg($expected) . "\n";
 echo "Actual:    " . escapeshellarg($actual)   . "\n";
 
-ini_set('assert.bail', true);
+ini_set('assert.exception', true);
 assert($actual == $expected);
