@@ -1,0 +1,27 @@
+
+name: Test all the versions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test_all_the_versions:
+    strategy:
+      matrix:
+        php_version:
+          - 5.5
+          - 5.6
+          - 7.0
+          - 7.1
+          - 7.2
+          - 7.3
+          - 7.4
+          - 8.0
+          - 8.1
+    runs-on: ubuntu-latest
+    container: docker.io/library/php:${{ matrix.php_version }}-cli
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
+      - name: Test
+        run: php test.php
