@@ -6,10 +6,16 @@ What is causing the warning in PHP 8.1?
 PHP Warning:  Array to string conversion in test.php on line 13
 ```
 
-[Example](trouble.php#L13):
+[Troublesome version](trouble.php#L13):
 
 ```php
 $actual   = $the_instance->$the_array['the_property_name'];
+```
+
+[Compatible version](compatible.php#L13):
+
+```php
+$actual   = $the_instance->{$the_array['the_property_name']};
 ```
 
 According to ["Changes to the handling of indirect variables, properties, and methods"](https://www.php.net/manual/en/migration70.incompatible.php#migration70.incompatible.variable-handling.indirect), this changed in PHP 7.0:

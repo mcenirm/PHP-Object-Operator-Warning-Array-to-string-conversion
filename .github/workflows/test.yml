@@ -10,6 +10,7 @@ jobs:
       matrix:
         test_file:
           - "trouble.php"
+          - "compatible.php"
         php_version:
           - "5.5"
           - "5.6"
