@@ -9,5 +9,11 @@ $the_instance = new AnExampleClass();
 
 $the_array = array('the_property_name'=>'an_example_property');
 
-echo "Expected:  " . ($the_instance->an_example_property) . "\n";
-echo "Actual:    " . ($the_instance->$the_array['the_property_name']) . "\n";
+$expected = $the_instance->an_example_property;
+$actual   = $the_instance->$the_array['the_property_name'];
+
+echo "Expected:  " . escapeshellarg($expected) . "\n";
+echo "Actual:    " . escapeshellarg($actual)   . "\n";
+
+ini_set('assert.bail', true);
+assert($actual == $expected);
