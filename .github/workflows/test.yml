@@ -8,6 +8,8 @@ jobs:
   test_all_the_versions:
     strategy:
       matrix:
+        test_file:
+          - "trouble.php"
         php_version:
           - "5.5"
           - "5.6"
@@ -23,7 +25,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.3
-      - name: Lint
-        run: php -l test.php
       - name: Test
-        run: php test.php
+        run: |
+          php -v
+          echo
+          php -l ${{ matrix.test_file }}
+          echo
+          php ${{ matrix.test_file }}
